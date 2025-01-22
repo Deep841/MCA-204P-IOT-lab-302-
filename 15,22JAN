@@ -150,3 +150,26 @@ print(" ")
 
 
 #####Answer-4:
+list1 = []
+num1 = int(input("number of elements in list1 : "))
+for i in range(1,num1+1):
+    a = int(input("list ke numbers btao : "))
+    list1.append(a)
+    
+list2 = []
+num2 = int(input("list2 ka size : "))
+for i in range(1,num2+1):
+    a = int(input("list ke numbers btao : "))
+    list2.append(a)
+
+print(list1,list2)
+print("common elements are..")
+for i in list1:
+    if i in list2:
+        print(i)
+    else:
+        continue
+
+
+
+####Answer-5:
