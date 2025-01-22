@@ -1,0 +1,152 @@
+Todo: lab assignment1 + bfs + dfs + A* algo
+
+Assignment1
+
+
+####Answer-1: 
+###1.1
+from math import factorial
+
+def Sum(x, n):
+    sum = 1
+    for i in range(1, n + 1):
+        sum += (x ** i) / factorial(i)
+    return sum
+
+x = float(input("Enter the value of x: "))
+n = int(input("Enter the value of n: "))
+
+result = Sum(x, n)
+print(f"The sum of the series is: {result}")
+
+###1.2
+def fact(num):
+    if num==0 :
+        return 1
+    else:
+        return num * fact(num-1)
+
+def Sum(x,n):
+    sum = 1
+    for i in range(1,n+1):
+        sum += ( x**i ) / fact(i)
+    return sum 
+
+x = float(input("x : "))
+n = int(input("n : "))
+
+result = Sum(x,n)
+print(result)
+
+
+
+####Answer-2:
+import random
+r_nums = []
+
+for _ in range(100): # _ acts as an place holder. 
+    r_nums.append(random.randint(100, 900))
+
+print(r_nums)
+print("no. of elts : ",len(r_nums))
+
+#part1 : 
+print(" ")
+print("part(i)... ")
+count = 0
+for i in r_nums :
+    if i%2 != 0:
+        count += 1
+        print(i,end = " ")
+print(" ")
+print("no. of elts : ",count)
+
+#part2 : 
+print(" ")
+print("part(ii)...")
+count = 0
+for i in r_nums :
+    if i%2 == 0:
+        count += 1
+        print(i,end = " ")
+print(" ")
+print("no. of elts : ",count)
+
+# #part3 : 
+# print(" ")
+# print("part(iii)...")
+# count = 0
+
+# for j in r_nums:
+#     for i in range(1,j+1):
+#         if j%i == 0:
+#             continue
+#         else : 
+#             count += 1
+#             print(j,end = " ")
+# print(" ")
+# print("no. of elts : ",count)
+
+
+
+print(" ")
+print("part(iii)...")
+count = 0
+
+# for j in r_nums:
+#     if j < 2:
+#         continue
+    
+#     is_prime = True
+#     for i in range(2, int(j**0.5) + 1):  
+#         if j % i == 0:
+#             is_prime = False
+#             break
+    
+#     if is_prime:
+#         count += 1
+#         print(j, end=" ")
+
+# print(" ")
+# print("no. of prime numbers: ", count)
+
+def is_prime(num):
+    if num < 2:
+        return False
+    for i in range(2, int(num ** 0.5) + 1):
+        if num % i == 0:
+            return False
+    return True
+
+for r in r_nums:
+    if is_prime(r):
+        count += 1
+        print(r,end=" ")
+print(" ")
+print("no. of prime numbers: ", count)
+
+
+
+####Answer-3:
+import math 
+def is_prime(n):
+    if n < 2:
+        return False
+    for i in range(2, int(math.sqrt(n))+1):
+        if n%i == 0:
+            return False
+    return True
+
+a = int(input("enter first number : "))
+b = int(input("enter second number : "))
+
+for i in range(a,b+1):
+    if is_prime(i):
+        print(i,end=" ")
+    else:
+        continue
+print(" ")
+
+
+
+#####Answer-4:
